@@ -2,253 +2,706 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnimeCord — The Best Free AI Anime Image Generator Discord Bot in 2026</title>
+    <meta name="description" content="AnimeCord is a free AI-powered Discord bot for generating anime art, hentai, NSFW images, and realistic artwork. 30+ models, 60+ LoRA styles, unlimited fast generation. No subscription required.">
+    <meta name="keywords" content="AnimeCord, AI anime generator, free Discord bot, NSFW Discord bot, hentai image generator, AI art bot, anime image generator, free AI image generation, Discord anime bot, text to image Discord, AI hentai generator, free NSFW bot, anime art generator, Stable Diffusion Discord, pony diffusion bot, LoRA styles Discord, AI art Discord bot 2026, best free anime bot, unlimited AI image generation, reimagine Discord bot">
+    <meta name="author" content="Samir OE">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.animecord.com/blog">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AnimeCord — The Best Free AI Anime Image Generator Discord Bot in 2026">
+    <meta property="og:description" content="Generate stunning anime artwork, NSFW hentai images, and realistic AI art directly in Discord — completely free. 30+ models, 60+ LoRA styles, unlimited fast generation.">
+    <meta property="og:image" content="https://i.postimg.cc/mZJcVzg7/animecord_banner.png">
+    <meta property="og:url" content="https://www.animecord.com/blog">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AnimeCord — Free AI Anime Image Generator Discord Bot">
+    <meta name="twitter:description" content="Generate anime art, hentai, NSFW images with 30+ AI models and 60+ styles — free on Discord.">
+    <meta name="twitter:image" content="https://i.postimg.cc/mZJcVzg7/animecord_banner.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #e0e0e0;
+            background-color: #0d1117;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .banner {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: 12px;
+            border: 3px solid #7c3aed;
+            box-shadow: 0 2px 10px rgba(124, 58, 237, 0.3);
+        }
+
+        h1 {
+            font-size: 2.4em;
+            color: #ffffff;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #c084fc;
+            margin-top: 50px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #1e1e2e;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            color: #a78bfa;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #c9d1d9;
+        }
+
+        .subtitle {
+            font-size: 1.15em;
+            color: #8b949e;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        a {
+            color: #7c3aed;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #a78bfa;
+            text-decoration: underline;
+        }
+
+        .links {
+            font-size: 1.05em;
+            margin-bottom: 20px;
+        }
+
+        .links a {
+            font-weight: 600;
+        }
+
+        strong {
+            color: #e6e6e6;
+        }
+
+        code {
+            background: #1e1e2e;
+            color: #c084fc;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 0.92em;
+            font-family: 'Fira Code', 'Courier New', monospace;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #161b22;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #1e1e2e;
+            color: #c084fc;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 16px;
+            border-top: 1px solid #21262d;
+            color: #c9d1d9;
+        }
+
+        tr:hover td {
+            background: #1c2128;
+        }
+
+        ul, ol {
+            margin: 12px 0 20px 24px;
+            color: #c9d1d9;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #21262d;
+            margin: 40px 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #1e1e2e, #1a1a2e);
+            border-left: 4px solid #7c3aed;
+            padding: 20px 24px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #1e1e2e, #2d1b69);
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .cta-section h2 {
+            border-bottom: none;
+            color: #ffffff;
+            margin-top: 0;
+        }
+
+        .cta-section a {
+            display: inline-block;
+            background: #7c3aed;
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 6px;
+            transition: background 0.2s;
+        }
+
+        .cta-section a:hover {
+            background: #6d28d9;
+            text-decoration: none;
+        }
+
+        .comparison-good {
+            color: #4ade80;
+        }
+
+        .comparison-bad {
+            color: #f87171;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: #1e1e2e;
+            color: #a78bfa;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            border: 1px solid #2d2d3f;
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+        }
+
+        .faq-item h3 {
+            color: #e0e0e0;
+            font-size: 1.1em;
+        }
+
+        .emoji {
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.7em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            table {
+                font-size: 0.9em;
+            }
+            td, th {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AnimeCord — The Best Free AI Anime Image Generator Discord Bot in 2026",
+        "description": "AnimeCord is a free AI-powered Discord bot for generating anime art, hentai, NSFW images, and realistic artwork with 30+ models and 60+ LoRA styles.",
+        "image": "https://i.postimg.cc/mZJcVzg7/animecord_banner.png",
+        "author": {
+            "@type": "Person",
+            "name": "Samir OE"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "AnimeCord",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://i.postimg.cc/xjhkgJ1y/download_(2).jpg"
+            }
+        },
+        "datePublished": "2026-03-08",
+        "dateModified": "2026-03-08"
+    }
+    </script>
 </head>
 <body>
 
-<h1>AnimeCord — The Best Free AI Anime Image Generator Discord Bot in 2026</h1>
-
-<p><em>Generate stunning anime artwork, NSFW hentai images, and realistic AI art directly in Discord — completely free, no subscriptions, no hidden costs.</em></p>
-
-<img src="https://i.postimg.cc/mZJcVzg7/animecord_banner.png" alt="AnimeCord Banner">
-
-<h2>What Is AnimeCord?</h2>
-
-<p><strong>AnimeCord</strong> is a powerful, free-to-use AI image generation Discord bot that lets you create high-quality anime, hentai, realistic, and pony-style artwork from simple text prompts — all without leaving Discord. Whether you're an anime fan looking to bring your favorite characters to life, a digital artist seeking inspiration, or a server owner wanting to add fun AI-powered features to your community, AnimeCord delivers professional-grade AI art generation with zero cost.</p>
-
-<p>Trusted by <strong>100+ Discord servers</strong> and growing rapidly, AnimeCord stands out as the most feature-rich free anime AI image generator bot available on Discord today.</p>
-
-<p>🔗 <strong>Website:</strong> <a href="https://www.animecord.com/">animecord.com</a><br>🔗 <strong>Support Server:</strong> <a href="https://discord.gg/C4ccrnkYF5">Join on Discord</a></p>
-
-<h2>Why Choose AnimeCord?</h2>
-
-<p><strong>1. 100% Free — No Premium Tier, No Paywalls</strong><br>Unlike most AI image generator bots that lock features behind expensive subscriptions, AnimeCord is completely free. Every feature — from 30+ AI models to 60+ LoRA styles to AI-enhanced prompts — is available to every user at no cost. There's no "premium" tier, no credits to purchase, and no hidden fees.</p>
-
-<p><strong>2. Unlimited Fast Image Generation</strong><br>With the <code>/generate-fast</code> command, you get unlimited AI image generations per day with no cooldowns. No other free Discord bot offers truly unlimited generations. The standard <code>/generate</code> command provides 10 high-quality generations daily, and <code>/generate-fast</code> covers unlimited quick generations — giving you the best of both worlds.</p>
-
-<p><strong>3. NSFW &amp; Hentai Support</strong><br>AnimeCord fully supports NSFW and hentai image generation in Discord's age-restricted channels. Generate uncensored anime art, hentai illustrations, and adult content using 27+ anime models and 60+ LoRA styles specifically optimized for NSFW content. Realistic models are restricted to SFW-only for safety.</p>
-
-<p><strong>4. 30+ AI Models to Choose From</strong><br>AnimeCord isn't a one-model bot. It offers a massive library of 30+ specialized AI models: anime models for classic anime and manga-style artwork, realistic models for photorealistic AI-generated images, and pony models for MLP and pony-style diffusion art.</p>
-
-<p><strong>5. Intelligent Anti-Abuse &amp; Content Safety</strong><br>AnimeCord takes safety seriously. An advanced content moderation system blocks illegal and harmful content while allowing creative freedom for adult users in appropriate channels.</p>
-
-<h2>Complete Feature Breakdown</h2>
-
-<p><strong>🎨 AI Image Generation (Text-to-Image)</strong><br>The core feature of AnimeCord is generating images from text descriptions. Simply type a prompt like <em>"a beautiful anime girl with silver hair standing under cherry blossoms"</em> and AnimeCord's AI engine brings it to life in seconds. How it works:</p>
-<ol>
-    <li>Use <code>/generate</code> and an interactive button panel appears</li>
-    <li>Choose your model category (Anime / Realistic / Pony)</li>
-    <li>Browse and select from 30+ models with pagination</li>
-    <li>Optionally add LoRA styles for artistic effects</li>
-    <li>Pick your image size (Portrait, Square, or Landscape)</li>
-    <li>Choose batch size (generate up to multiple images at once)</li>
-    <li>Toggle AI Prompt Enhancement for smarter results</li>
-    <li>Hit generate and watch the magic happen</li>
-</ol>
-
-<p><strong>🔄 Image Reimagine (Image-to-Image)</strong><br>Got an image you love but want it in a different art style? AnimeCord's <code>/reimagine</code> command lets you upload any image and recreate it in an entirely new AI art style. The bot uses AI-powered image analysis to understand your uploaded image, then regenerates it with your chosen model and style settings. Perfect for transforming photos into anime art, restyling existing artwork, creating variations of your favorite images, and converting sketches into polished illustrations.</p>
-
-<p><strong>⚡ Fast Generation Mode (Unlimited)</strong><br>The <code>/generate-fast</code> command uses AnimeCord's optimized generation pipeline to deliver unlimited generations with no daily cap. It supports both SFW and NSFW content, custom shapes, and negative prompts.</p>
-
-<p><strong>🧠 AI-Powered Prompt Enhancement</strong><br>Toggle on AI Enhancement and AnimeCord's built-in prompt AI automatically upgrades your basic prompt into a detailed, artistic description with proper lighting, composition, color palette, and stylistic details. Turn "anime girl" into a masterpiece-worthy prompt with one click.</p>
-
-<h2>All 30+ AI Models</h2>
-
-<p>AnimeCord offers one of the largest model libraries of any free Discord bot.</p>
-
-<h3>Anime Models (27+)</h3>
-<ul>
-    <li>Haruka (Default) — High-quality general anime</li>
-    <li>Haruka V2 — Enhanced anime generation</li>
-    <li>Tsubaki — Detailed anime illustrations</li>
-    <li>Hoshino — Soft, ethereal anime style</li>
-    <li>Moonbeam — Dreamy, atmospheric anime</li>
-    <li>Serin — Clean, modern anime</li>
-    <li>Otome v2 — Otome/romance game style</li>
-    <li>Hinata v2 — Vibrant anime art</li>
-    <li>Illustrious-XL-V2.0 — Premium XL anime model</li>
-    <li>NoobAI-XL (NAI-XL) — NAI-inspired XL model</li>
-    <li>Animagine XL 4.0 — Latest Animagine generation</li>
-    <li>Sunflower — Warm, bright anime</li>
-    <li>Whimsical — Playful, fantasy anime</li>
-    <li>Poppyseed — Unique artistic anime</li>
-    <li>Sundae — Sweet, colorful anime</li>
-    <li>Rosebud — Elegant, refined anime</li>
-    <li>Daydream — Soft, imaginative anime</li>
-    <li>Midsummer — Rich, seasonal anime</li>
-    <li>Anything — Versatile all-purpose anime</li>
-    <li>Hassaku — High-detail anime</li>
-    <li>Diamond — Crystal-clear anime</li>
-    <li>Neverland — Fantasy world anime</li>
-    <li>TITAN X 2.5D — 2.5D anime-realistic blend</li>
-    <li>And more...</li>
-</ul>
-
-<h3>Realistic Models</h3>
-<ul>
-    <li>majicMIX realistic — Photorealistic generation</li>
-    <li>Real V4.0 — True-to-life realism</li>
-    <li>Uxpose — Realistic portrait/poses</li>
-</ul>
-
-<h3>Pony Models</h3>
-<ul>
-    <li>Pony Diffusion V6 XL2 — Premium pony art</li>
-    <li>Pony Diffusion for Anime — Anime-pony fusion</li>
-</ul>
-
-<p>Each model comes with pre-optimized generation parameters — sampling methods, CFG scales, step counts, and negative prompts are all fine-tuned so you get the best possible output without manual tweaking.</p>
-
-<h2>60+ LoRA Styles</h2>
-
-<p>LoRA (Low-Rank Adaptation) styles let you apply artistic effects and modifications on top of any model. AnimeCord offers 60+ LoRAs across multiple categories.</p>
-
-<p><strong>Enhancement LoRAs:</strong> Better Hands, Detail Tweaker, Add More Details, Eye Detail, Enhancer, Extra Details, ClearHandsXL, ModelBoosterXL, Beautiful Face.</p>
-
-<p><strong>Artistic Style LoRAs:</strong> Glitter, Jellyfish Forest, Gothic Glamour, Manga Style, Punk Anarchy, Manhwa Style, Korean Art, Jim Lee Style, Incase Style, Detailed Anime, and more.</p>
-
-<p><strong>Character-Specific LoRAs:</strong> Melony (Pokémon), Akiyama Rinko, Loona (Helluva Boss), Burnice White (ZZZ), Genshin Impact characters, Naruto Anime style.</p>
-
-<p><strong>Body &amp; Pose LoRAs:</strong> Various pose and composition styles for creative character positioning.</p>
-
-<p><strong>Clothing &amp; Fashion LoRAs:</strong> Landmine Girl Fashion, Mesh Dress, Real Style, Belly Dancer, and more.</p>
-
-<p>Mix and match LoRAs with any compatible model to create truly unique artwork that matches your exact vision.</p>
-
-<h2>Image Size Options</h2>
-
-<ul>
-    <li><strong>Portrait (2:3)</strong> — 768×1024 or 512×768 — Best for character art, full-body shots</li>
-    <li><strong>Square (1:1)</strong> — 768×768 or 512×512 — Best for profile pictures, avatars</li>
-    <li><strong>Landscape (3:2)</strong> — 1024×768 or 768×512 — Best for scenes, wallpapers, backgrounds</li>
-</ul>
-
-<h2>Full Command List</h2>
-
-<h3>Image Generation Commands</h3>
-<ul>
-    <li><code>/generate</code> — Interactive AI image generation with button-based UI</li>
-    <li><code>/generate-fast</code> — Unlimited fast generation, no daily limits</li>
-    <li><code>/reimagine</code> — Upload an image and recreate it in a new AI style</li>
-    <li><code>/generate-old</code> — Legacy text-based generation command</li>
-    <li><code>/reimagine-old</code> — Legacy text-based reimagine command</li>
-</ul>
-
-<h3>Information Commands</h3>
-<ul>
-    <li><code>/about</code> — Learn about AnimeCord's features</li>
-    <li><code>/help</code> — Full command guide and usage tips</li>
-    <li><code>/status</code> — Check bot performance and system health</li>
-    <li><code>/queue</code> — See your position in the generation queue</li>
-    <li><code>/limits</code> — View your current daily usage and cooldowns</li>
-    <li><code>/resettime</code> — Check when your daily limit resets</li>
-    <li><code>/quota</code> — See remaining generation credits</li>
-    <li><code>/models</code> — Browse all 30+ available AI models</li>
-</ul>
-
-<h3>Server Management Commands</h3>
-<ul>
-    <li><code>/setchannel</code> — Restrict image generation to a specific channel (admin only)</li>
-    <li><code>/guidelines</code> — View content policy and community rules</li>
-    <li><code>/privacy</code> — Read the bot's privacy policy</li>
-    <li><code>/support</code> — Get a link to the support Discord server</li>
-    <li><code>/invite</code> — Get the bot invite link for your server</li>
-</ul>
-
-<h2>How AnimeCord Works Under the Hood</h2>
-
-<p>AnimeCord isn't just another simple wrapper bot. It's built on production-grade infrastructure designed for reliability and performance.</p>
-
-<p><strong>Multi-Engine AI Architecture:</strong> AnimeCord uses two independent AI generation engines. The High-Quality Engine powers <code>/generate</code> and <code>/reimagine</code> with premium Stable Diffusion models, load balanced across multiple nodes. The Fast Engine powers <code>/generate-fast</code> with unlimited, no-cap generations. If one engine experiences issues, the other continues working — ensuring your generations never fail.</p>
-
-<p><strong>Smart Prompt Enhancement:</strong> AnimeCord integrates a built-in AI prompt enhancer that intelligently upgrades your prompts by adding artistic details like lighting direction, color harmony, composition techniques, and stylistic elements.</p>
-
-<p><strong>Advanced Image Analysis:</strong> For the <code>/reimagine</code> feature, AnimeCord uses AI-powered image captioning to analyze uploaded images and generate detailed descriptions that capture the essence of the original before recreating it in a new style.</p>
-
-<p><strong>Enterprise-Grade Reliability:</strong></p>
-<ul>
-    <li>Circuit breakers prevent cascading failures across services</li>
-    <li>Response caching speeds up repeated similar requests</li>
-    <li>Queue management with estimated wait times</li>
-    <li>Health monitoring for system stability</li>
-    <li>Automatic error recovery and self-healing</li>
-    <li>Zero-downtime operation with process management</li>
-</ul>
-
-<h2>Content Safety &amp; Moderation</h2>
-
-<p>AnimeCord takes responsible AI usage seriously:</p>
-<ul>
-    <li><strong>NSFW restricted to age-verified channels</strong> — NSFW generations only happen in Discord's age-restricted channels</li>
-    <li><strong>Banned content detection</strong> — Advanced keyword filtering with anti-evasion technology catches attempts to bypass filters using leetspeak, Unicode lookalikes, or symbol substitutions</li>
-    <li><strong>Progressive enforcement</strong> — Users receive warnings before escalating to temporary and permanent bans</li>
-    <li><strong>Realistic model restrictions</strong> — Realistic AI models are locked to SFW-only content</li>
-    <li><strong>Transparent policies</strong> — Use <code>/guidelines</code> and <code>/privacy</code> to review all content rules</li>
-</ul>
-
-<h2>Getting Started with AnimeCord</h2>
-
-<p><strong>Step 1: Invite AnimeCord to Your Server</strong><br>Visit <a href="https://www.animecord.com/">animecord.com</a> or use the <code>/invite</code> command in any server that already has AnimeCord. Add the bot with the required permissions.</p>
-
-<p><strong>Step 2: Set Up a Generation Channel (Optional)</strong><br>Server admins can use <code>/setchannel</code> to restrict image generation to a specific channel. For NSFW generation, make sure you have a Discord age-restricted channel enabled.</p>
-
-<p><strong>Step 3: Generate Your First Image</strong><br>Type <code>/generate</code> and follow the interactive button menu:</p>
-<ol>
-    <li>Select a model category — Anime, Realistic, or Pony</li>
-    <li>Choose your model — Browse 30+ options</li>
-    <li>Add a LoRA style (optional) — Pick from 60+ artistic styles</li>
-    <li>Set image size — Portrait, Square, or Landscape</li>
-    <li>Toggle AI Enhancement — Let AnimeCord's AI upgrade your prompt</li>
-    <li>Enter your prompt — Describe what you want to see</li>
-    <li>Generate! — Your image appears in seconds</li>
-</ol>
-
-<p><strong>Step 4: Try Unlimited Fast Generation</strong><br>Use <code>/generate-fast</code> for unlimited generations with no daily cap. Great for experimentation and rapid iteration.</p>
-
-<p><strong>Step 5: Reimagine Existing Images</strong><br>Upload any image with <code>/reimagine</code> and transform it into AI art using any model and style in AnimeCord's library.</p>
-
-<h2>AnimeCord vs. Other Discord AI Art Bots</h2>
-
-<blockquote>
-<p><strong>Price:</strong> AnimeCord — 100% Free | Midjourney — $10–$60/month | Other bots — Limited free tiers</p>
-<p><strong>Daily Generations:</strong> AnimeCord — 10 + Unlimited Fast | Midjourney — Based on plan | Other bots — 5–25 typically</p>
-<p><strong>AI Models:</strong> AnimeCord — 30+ models | Midjourney — 1 model | Other bots — 1–5 models</p>
-<p><strong>LoRA Styles:</strong> AnimeCord — 60+ styles | Midjourney — Built-in only | Other bots — Few or none</p>
-<p><strong>NSFW Support:</strong> AnimeCord — Full support | Midjourney — None | Other bots — Varies</p>
-<p><strong>AI Prompt Enhancement:</strong> AnimeCord — Built-in AI | Midjourney — No | Other bots — Rare</p>
-<p><strong>Anime Specialized:</strong> AnimeCord — Anime-first | Midjourney — General purpose | Other bots — Varies</p>
-</blockquote>
-
-
-<h2>Frequently Asked Questions</h2>
-
-<p><strong>Is AnimeCord really free?</strong><br>Yes, 100% free. There are no premium tiers, no credit purchases, and no hidden fees. Every feature is available to all users for free.</p>
-
-<p><strong>How many images can I generate per day?</strong><br>You get 10 high-quality generations per day with <code>/generate</code> and unlimited generations with <code>/generate-fast</code>. Your daily limit resets at midnight UTC.</p>
-
-<p><strong>Does AnimeCord support NSFW/hentai generation?</strong><br>Yes. AnimeCord supports full NSFW and hentai image generation using anime and pony models in Discord's age-restricted channels. Realistic models are SFW-only.</p>
-
-<p><strong>What AI models does AnimeCord use?</strong><br>AnimeCord uses custom-tuned AI models including Haruka, Illustrious-XL, NoobAI-XL, Animagine XL 4.0, Pony Diffusion V6, and 25+ more — all accessible for free.</p>
-
-<p><strong>Can I use AnimeCord for character art?</strong><br>Absolutely. With 60+ LoRA styles including character-specific ones (Pokemon, Genshin Impact, Naruto, Helluva Boss, and more), AnimeCord is perfect for character art generation.</p>
-
-<p><strong>How do I generate NSFW images?</strong><br>Use <code>/generate</code> or <code>/generate-fast</code> in a Discord age-restricted (NSFW) channel. The bot will automatically enable NSFW generation in these channels.</p>
-
-<p><strong>Can I reimagine/restyle my own images?</strong><br>Yes! Use the <code>/reimagine</code> command to upload any image and recreate it in a different AI art style using any of AnimeCord's 30+ models and 60+ LoRA styles.</p>
-
-<p><strong>Is AnimeCord safe to use on my server?</strong><br>Yes. AnimeCord has built-in content safety systems, only allows NSFW in age-restricted channels, filters banned content with anti-evasion detection, and provides transparent privacy and content policies.</p>
-
-<p><strong>How fast is image generation?</strong><br>Standard generations typically complete in 10–30 seconds depending on model complexity and queue length. Fast generations via <code>/generate-fast</code> are even quicker.</p>
-
-<p><strong>How do I get support?</strong><br>Join the <a href="https://discord.gg/C4ccrnkYF5">AnimeCord Support Server</a> on Discord for help, feature requests, and bug reports.</p>
-
-<h2>Join the AnimeCord Community</h2>
-
-<p>AnimeCord is more than just a bot — it's a growing community of anime art enthusiasts, digital creators, and AI art explorers. Join 100+ servers already using AnimeCord to create stunning AI artwork every day.</p>
-
-<p><strong>Ready to start generating?</strong><br><a href="https://www.animecord.com/">Visit Website</a> | <a href="https://discord.gg/C4ccrnkYF5">Join Support Server</a></p>
-
-<p><em>AnimeCord — Free AI anime image generation for Discord. Generate anime art, hentai, NSFW images, and realistic AI artwork with 30+ models and 60+ styles. No subscription required.</em></p>
+    <img src="https://i.postimg.cc/mZJcVzg7/animecord_banner.png" alt="AnimeCord Banner - Free AI Anime Image Generator Discord Bot" class="banner">
+
+    <h1><img src="https://i.postimg.cc/xjhkgJ1y/download_(2).jpg" alt="AnimeCord Icon" class="icon"> AnimeCord — The Best Free AI Anime Image Generator Discord Bot in 2026</h1>
+
+    <p class="subtitle">Generate stunning anime artwork, NSFW hentai images, and realistic AI art directly in Discord — completely free, no subscriptions, no hidden costs.</p>
+
+    <hr>
+
+    <h2>What Is AnimeCord?</h2>
+
+    <p><strong>AnimeCord</strong> is a powerful, free-to-use AI image generation Discord bot that lets you create high-quality anime, hentai, realistic, and pony-style artwork from simple text prompts — all without leaving Discord. Whether you're an anime fan looking to bring your favorite characters to life, a digital artist seeking inspiration, or a server owner wanting to add fun AI-powered features to your community, AnimeCord delivers professional-grade AI art generation with zero cost.</p>
+
+    <p>Trusted by <strong>100+ Discord servers</strong> and growing rapidly, AnimeCord stands out as the most feature-rich free anime AI image generator bot available on Discord today.</p>
+
+    <p class="links">
+        <span class="emoji">🔗</span> <strong>Website:</strong> <a href="https://www.animecord.com/">animecord.com</a><br>
+        <span class="emoji">🔗</span> <strong>Support Server:</strong> <a href="https://discord.gg/C4ccrnkYF5">Join on Discord</a>
+    </p>
+
+    <hr>
+
+    <h2>Why Choose AnimeCord? Top Reasons to Add It to Your Server</h2>
+
+    <h3>1. 100% Free — No Premium Tier, No Paywalls</h3>
+    <p>Unlike most AI image generator bots that lock features behind expensive subscriptions, AnimeCord is <strong>completely free</strong>. Every feature — from 30+ AI models to 60+ LoRA styles to AI-enhanced prompts — is available to every user at no cost. There's no "premium" tier, no credits to purchase, and no hidden fees.</p>
+
+    <h3>2. Unlimited Fast Image Generation</h3>
+    <p>With the <code>/generate-fast</code> command, you get <strong>unlimited AI image generations per day</strong> with no cooldowns. No other free Discord bot offers truly unlimited generations. The standard <code>/generate</code> command provides 10 high-quality generations daily, and <code>/generate-fast</code> covers unlimited quick generations — giving you the best of both worlds.</p>
+
+    <h3>3. NSFW &amp; Hentai Support</h3>
+    <p>AnimeCord fully supports <strong>NSFW and hentai image generation</strong> in Discord's age-restricted channels. Generate uncensored anime art, hentai illustrations, and adult content using 27+ anime models and 60+ LoRA styles specifically optimized for NSFW content. Realistic models are restricted to SFW-only for safety.</p>
+
+    <h3>4. 30+ AI Models to Choose From</h3>
+    <p>AnimeCord isn't a one-model bot. It offers a <strong>massive library of 30+ specialized AI models</strong> spanning three categories:</p>
+    <ul>
+        <li><strong>Anime models</strong> for classic anime and manga-style artwork</li>
+        <li><strong>Realistic models</strong> for photorealistic AI-generated images</li>
+        <li><strong>Pony models</strong> for MLP and pony-style diffusion art</li>
+    </ul>
+
+    <h3>5. Intelligent Anti-Abuse &amp; Content Safety</h3>
+    <p>AnimeCord takes safety seriously. An advanced content moderation system blocks illegal and harmful content while allowing creative freedom for adult users in appropriate channels.</p>
+
+    <hr>
+
+    <h2>Complete Feature Breakdown</h2>
+
+    <h3><span class="emoji">🎨</span> AI Image Generation (Text-to-Image)</h3>
+    <p>The core feature of AnimeCord is generating images from text descriptions. Simply type a prompt like <em>"a beautiful anime girl with silver hair standing under cherry blossoms"</em> and AnimeCord's AI engine brings it to life in seconds.</p>
+
+    <div class="highlight-box">
+        <strong>How it works:</strong>
+        <ol>
+            <li>Use <code>/generate</code> and an interactive button panel appears</li>
+            <li>Choose your model category (Anime / Realistic / Pony)</li>
+            <li>Browse and select from 30+ models with pagination</li>
+            <li>Optionally add LoRA styles for artistic effects</li>
+            <li>Pick your image size (Portrait, Square, or Landscape)</li>
+            <li>Choose batch size (generate up to multiple images at once)</li>
+            <li>Toggle AI Prompt Enhancement for smarter results</li>
+            <li>Hit generate and watch the magic happen</li>
+        </ol>
+    </div>
+
+    <p>The interactive UI makes the whole process feel effortless — no need to memorize complex command parameters.</p>
+
+    <h3><span class="emoji">🔄</span> Image Reimagine (Image-to-Image)</h3>
+    <p>Got an image you love but want it in a different art style? AnimeCord's <code>/reimagine</code> command lets you <strong>upload any image and recreate it in an entirely new AI art style</strong>. The bot uses AI-powered image analysis to understand your uploaded image, then regenerates it with your chosen model and style settings.</p>
+    <p>Perfect for:</p>
+    <ul>
+        <li>Transforming photos into anime art</li>
+        <li>Restyling existing artwork</li>
+        <li>Creating variations of your favorite images</li>
+        <li>Converting sketches into polished illustrations</li>
+    </ul>
+
+    <h3><span class="emoji">⚡</span> Fast Generation Mode (Unlimited)</h3>
+    <p>The <code>/generate-fast</code> command uses AnimeCord's optimized generation pipeline to deliver <strong>unlimited generations with no daily cap</strong>. It supports both SFW and NSFW content, custom shapes, and negative prompts. When you need quick iterations or unlimited creative exploration, this is your go-to command.</p>
+
+    <h3><span class="emoji">🧠</span> AI-Powered Prompt Enhancement</h3>
+    <p>Not sure how to write the perfect prompt? Toggle on <strong>AI Enhancement</strong> and AnimeCord's built-in prompt AI automatically upgrades your basic prompt into a detailed, artistic description with proper lighting, composition, color palette, and stylistic details. Turn "anime girl" into a masterpiece-worthy prompt with one click.</p>
+
+    <hr>
+
+    <h2>All 30+ AI Models</h2>
+    <p>AnimeCord offers one of the largest model libraries of any free Discord bot:</p>
+
+    <h3>Anime Models (27+)</h3>
+    <table>
+        <thead>
+            <tr><th>Model</th><th>Style</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>Haruka</strong> (Default)</td><td>High-quality general anime</td></tr>
+            <tr><td><strong>Haruka V2</strong></td><td>Enhanced anime generation</td></tr>
+            <tr><td><strong>Tsubaki</strong></td><td>Detailed anime illustrations</td></tr>
+            <tr><td><strong>Hoshino</strong></td><td>Soft, ethereal anime style</td></tr>
+            <tr><td><strong>Moonbeam</strong></td><td>Dreamy, atmospheric anime</td></tr>
+            <tr><td><strong>Serin</strong></td><td>Clean, modern anime</td></tr>
+            <tr><td><strong>Otome v2</strong></td><td>Otome/romance game style</td></tr>
+            <tr><td><strong>Hinata v2</strong></td><td>Vibrant anime art</td></tr>
+            <tr><td><strong>Illustrious-XL-V2.0</strong></td><td>Premium XL anime model</td></tr>
+            <tr><td><strong>NoobAI-XL (NAI-XL)</strong></td><td>NAI-inspired XL model</td></tr>
+            <tr><td><strong>Animagine XL 4.0</strong></td><td>Latest Animagine generation</td></tr>
+            <tr><td><strong>Sunflower</strong></td><td>Warm, bright anime</td></tr>
+            <tr><td><strong>Whimsical</strong></td><td>Playful, fantasy anime</td></tr>
+            <tr><td><strong>Poppyseed</strong></td><td>Unique artistic anime</td></tr>
+            <tr><td><strong>Sundae</strong></td><td>Sweet, colorful anime</td></tr>
+            <tr><td><strong>Rosebud</strong></td><td>Elegant, refined anime</td></tr>
+            <tr><td><strong>Daydream</strong></td><td>Soft, imaginative anime</td></tr>
+            <tr><td><strong>Midsummer</strong></td><td>Rich, seasonal anime</td></tr>
+            <tr><td><strong>Anything</strong></td><td>Versatile all-purpose anime</td></tr>
+            <tr><td><strong>Hassaku</strong></td><td>High-detail anime</td></tr>
+            <tr><td><strong>Diamond</strong></td><td>Crystal-clear anime</td></tr>
+            <tr><td><strong>Neverland</strong></td><td>Fantasy world anime</td></tr>
+            <tr><td><strong>TITAN X 2.5D</strong></td><td>2.5D anime-realistic blend</td></tr>
+            <tr><td>And more...</td><td></td></tr>
+        </tbody>
+    </table>
+
+    <h3>Realistic Models</h3>
+    <table>
+        <thead>
+            <tr><th>Model</th><th>Style</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>majicMIX realistic</strong></td><td>Photorealistic generation</td></tr>
+            <tr><td><strong>Real V4.0</strong></td><td>True-to-life realism</td></tr>
+            <tr><td><strong>Uxpose</strong></td><td>Realistic portrait/poses</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Pony Models</h3>
+    <table>
+        <thead>
+            <tr><th>Model</th><th>Style</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>Pony Diffusion V6 XL2</strong></td><td>Premium pony art</td></tr>
+            <tr><td><strong>Pony Diffusion for Anime</strong></td><td>Anime-pony fusion</td></tr>
+        </tbody>
+    </table>
+
+    <p>Each model comes with <strong>pre-optimized generation parameters</strong> — sampling methods, CFG scales, step counts, and negative prompts are all fine-tuned so you get the best possible output without manual tweaking.</p>
+
+    <hr>
+
+    <h2>60+ LoRA Styles</h2>
+    <p>LoRA (Low-Rank Adaptation) styles let you apply artistic effects and modifications on top of any model. AnimeCord offers <strong>60+ LoRAs</strong> across multiple categories:</p>
+
+    <h3>Enhancement LoRAs</h3>
+    <p>Better Hands, Detail Tweaker, Add More Details, Eye Detail, Enhancer, Extra Details, ClearHandsXL, ModelBoosterXL, Beautiful Face</p>
+
+    <h3>Artistic Style LoRAs</h3>
+    <p>Glitter, Jellyfish Forest, Gothic Glamour, Manga Style, Punk Anarchy, Manhwa Style, Korean Art, Jim Lee Style, Incase Style, Detailed Anime, and more</p>
+
+    <h3>Character-Specific LoRAs</h3>
+    <p>Melony (Pok&eacute;mon), Akiyama Rinko, Loona (Helluva Boss), Burnice White (ZZZ), Genshin Impact characters, Naruto Anime style</p>
+
+    <h3>Body &amp; Pose LoRAs</h3>
+    <p>Various pose and composition styles for creative character positioning</p>
+
+    <h3>Clothing &amp; Fashion LoRAs</h3>
+    <p>Landmine Girl Fashion, Mesh Dress, Real Style, Belly Dancer, and more</p>
+
+    <p>Mix and match LoRAs with any compatible model to create truly unique artwork that matches your exact vision.</p>
+
+    <hr>
+
+    <h2>Image Size Options</h2>
+
+    <table>
+        <thead>
+            <tr><th>Aspect Ratio</th><th>Resolution</th><th>Best For</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>Portrait (2:3)</strong></td><td>768&times;1024 or 512&times;768</td><td>Character art, full-body shots</td></tr>
+            <tr><td><strong>Square (1:1)</strong></td><td>768&times;768 or 512&times;512</td><td>Profile pictures, avatars</td></tr>
+            <tr><td><strong>Landscape (3:2)</strong></td><td>1024&times;768 or 768&times;512</td><td>Scenes, wallpapers, backgrounds</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Full Command List</h2>
+
+    <h3>Image Generation Commands</h3>
+    <table>
+        <thead>
+            <tr><th>Command</th><th>What It Does</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><code>/generate</code></td><td>Interactive AI image generation with button-based UI</td></tr>
+            <tr><td><code>/generate-fast</code></td><td>Unlimited fast generation — no daily limits</td></tr>
+            <tr><td><code>/reimagine</code></td><td>Upload an image and recreate it in a new AI style</td></tr>
+            <tr><td><code>/generate-old</code></td><td>Legacy text-based generation command</td></tr>
+            <tr><td><code>/reimagine-old</code></td><td>Legacy text-based reimagine command</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Information Commands</h3>
+    <table>
+        <thead>
+            <tr><th>Command</th><th>What It Does</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><code>/about</code></td><td>Learn about AnimeCord's features</td></tr>
+            <tr><td><code>/help</code></td><td>Full command guide and usage tips</td></tr>
+            <tr><td><code>/status</code></td><td>Check bot performance and system health</td></tr>
+            <tr><td><code>/queue</code></td><td>See your position in the generation queue</td></tr>
+            <tr><td><code>/limits</code></td><td>View your current daily usage and cooldowns</td></tr>
+            <tr><td><code>/resettime</code></td><td>Check when your daily limit resets</td></tr>
+            <tr><td><code>/quota</code></td><td>See remaining generation credits</td></tr>
+            <tr><td><code>/models</code></td><td>Browse all 30+ available AI models</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Server Management Commands</h3>
+    <table>
+        <thead>
+            <tr><th>Command</th><th>What It Does</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><code>/setchannel</code></td><td>Restrict image generation to a specific channel (admin only)</td></tr>
+            <tr><td><code>/guidelines</code></td><td>View content policy and community rules</td></tr>
+            <tr><td><code>/privacy</code></td><td>Read the bot's privacy policy</td></tr>
+            <tr><td><code>/support</code></td><td>Get a link to the support Discord server</td></tr>
+            <tr><td><code>/invite</code></td><td>Get the bot invite link for your server</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>How AnimeCord Works Under the Hood</h2>
+    <p>AnimeCord isn't just another simple wrapper bot. It's built on <strong>production-grade infrastructure</strong> designed for reliability and performance:</p>
+
+    <h3>Multi-Engine AI Architecture</h3>
+    <p>AnimeCord uses a <strong>multi-engine AI architecture</strong> for maximum uptime and flexibility:</p>
+    <ol>
+        <li><strong>High-Quality Engine</strong> — Powers the <code>/generate</code> and <code>/reimagine</code> commands with premium Stable Diffusion models, fine-tuned for anime and artistic output. Load balanced across multiple nodes for reliability.</li>
+        <li><strong>Fast Engine</strong> — Powers the <code>/generate-fast</code> command with unlimited, no-cap generations through an optimized inference pipeline.</li>
+    </ol>
+    <p>If one engine experiences issues, the other continues working — ensuring your generations never fail.</p>
+
+    <h3>Smart Prompt Enhancement</h3>
+    <p>AnimeCord integrates a built-in <strong>AI prompt enhancer</strong> that intelligently upgrades your prompts. The AI analyzes your basic prompt and adds artistic details like lighting direction, color harmony, composition techniques, and stylistic elements that make your generated images dramatically better.</p>
+
+    <h3>Advanced Image Analysis</h3>
+    <p>For the <code>/reimagine</code> feature, AnimeCord uses <strong>AI-powered image captioning</strong> to analyze uploaded images and generate detailed descriptions that capture the essence of the original before recreating it in a new style.</p>
+
+    <h3>Enterprise-Grade Reliability</h3>
+    <ul>
+        <li><strong>Circuit breakers</strong> prevent cascading failures across services</li>
+        <li><strong>Response caching</strong> speeds up repeated similar requests</li>
+        <li><strong>Queue management</strong> with estimated wait times</li>
+        <li><strong>Health monitoring</strong> for system stability</li>
+        <li><strong>Automatic error recovery</strong> and self-healing</li>
+        <li><strong>Zero-downtime operation</strong> with process management</li>
+    </ul>
+
+    <hr>
+
+    <h2>Content Safety &amp; Moderation</h2>
+    <p>AnimeCord takes responsible AI usage seriously:</p>
+    <ul>
+        <li><strong>NSFW content is restricted to age-verified channels</strong> — The bot checks that NSFW generations only happen in Discord's age-restricted channels</li>
+        <li><strong>Banned content detection</strong> — Advanced keyword filtering with anti-evasion technology catches attempts to bypass filters using leetspeak, Unicode lookalikes, or symbol substitutions</li>
+        <li><strong>Progressive enforcement</strong> — Users receive warnings before escalating to temporary and permanent bans</li>
+        <li><strong>Realistic model restrictions</strong> — Realistic AI models are locked to SFW-only content</li>
+        <li><strong>Transparent policies</strong> — Use <code>/guidelines</code> and <code>/privacy</code> to review all content rules</li>
+    </ul>
+
+    <hr>
+
+    <h2>Getting Started with AnimeCord</h2>
+
+    <h3>Step 1: Invite AnimeCord to Your Server</h3>
+    <p>Visit <a href="https://www.animecord.com/">animecord.com</a> or use the <code>/invite</code> command in any server that already has AnimeCord to get the invite link. Add the bot with the required permissions.</p>
+
+    <h3>Step 2: Set Up a Generation Channel (Optional)</h3>
+    <p>Server admins can use <code>/setchannel</code> to restrict image generation to a specific channel, keeping other channels clean. For NSFW generation, make sure you have a Discord age-restricted channel enabled.</p>
+
+    <h3>Step 3: Generate Your First Image</h3>
+    <div class="highlight-box">
+        <p>Type <code>/generate</code> and follow the interactive button menu:</p>
+        <ol>
+            <li><strong>Select a model category</strong> — Anime, Realistic, or Pony</li>
+            <li><strong>Choose your model</strong> — Browse 30+ options</li>
+            <li><strong>Add a LoRA style</strong> (optional) — Pick from 60+ artistic styles</li>
+            <li><strong>Set image size</strong> — Portrait, Square, or Landscape</li>
+            <li><strong>Toggle AI Enhancement</strong> — Let AnimeCord's AI upgrade your prompt</li>
+            <li><strong>Enter your prompt</strong> — Describe what you want to see</li>
+            <li><strong>Generate!</strong> — Your image appears in seconds</li>
+        </ol>
+    </div>
+
+    <h3>Step 4: Try Unlimited Fast Generation</h3>
+    <p>Use <code>/generate-fast</code> for unlimited generations with no daily cap. Great for experimentation and rapid iteration.</p>
+
+    <h3>Step 5: Reimagine Existing Images</h3>
+    <p>Upload any image with <code>/reimagine</code> and transform it into AI art using any model and style in AnimeCord's library.</p>
+
+    <hr>
+
+    <h2>AnimeCord vs. Other Discord AI Art Bots</h2>
+
+    <table>
+        <thead>
+            <tr><th>Feature</th><th>AnimeCord</th><th>Midjourney</th><th>Other Bots</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>Price</strong></td><td>100% Free</td><td>$10-$60/month</td><td>Free tier limited</td></tr>
+            <tr><td><strong>Daily Generations</strong></td><td>10 + Unlimited Fast</td><td>Based on plan</td><td>5-25 typically</td></tr>
+            <tr><td><strong>AI Models</strong></td><td>30+ models</td><td>1 model</td><td>1-5 models</td></tr>
+            <tr><td><strong>LoRA Styles</strong></td><td>60+ styles</td><td>Built-in styles</td><td>Few or none</td></tr>
+            <tr><td><strong>NSFW Support</strong></td><td class="comparison-good">Yes, full support</td><td class="comparison-bad">No</td><td>Varies</td></tr>
+            <tr><td><strong>Image Reimagine</strong></td><td class="comparison-good">Yes</td><td class="comparison-good">Yes</td><td>Rare</td></tr>
+            <tr><td><strong>AI Prompt Enhancement</strong></td><td class="comparison-good">Built-in AI</td><td class="comparison-bad">No</td><td>Rare</td></tr>
+            <tr><td><strong>Interactive UI</strong></td><td class="comparison-good">Buttons &amp; menus</td><td class="comparison-good">Yes</td><td>Basic</td></tr>
+            <tr><td><strong>Anime Specialized</strong></td><td class="comparison-good">Anime-first</td><td class="comparison-bad">General</td><td>Varies</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <h3>Is AnimeCord really free?</h3>
+        <p><strong>Yes, 100% free.</strong> There are no premium tiers, no credit purchases, and no hidden fees. Every feature is available to all users for free.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How many images can I generate per day?</h3>
+        <p>You get <strong>10 high-quality generations per day</strong> with <code>/generate</code> and <strong>unlimited generations</strong> with <code>/generate-fast</code>. Your daily limit resets at midnight UTC.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Does AnimeCord support NSFW/hentai generation?</h3>
+        <p><strong>Yes.</strong> AnimeCord supports full NSFW and hentai image generation using anime and pony models in Discord's age-restricted channels. Realistic models are SFW-only.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>What AI models does AnimeCord use?</h3>
+        <p>AnimeCord uses <strong>custom-tuned AI models</strong> including Haruka, Illustrious-XL, NoobAI-XL, Animagine XL 4.0, Pony Diffusion V6, and 25+ more — all accessible for free.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Can I use AnimeCord for character art?</h3>
+        <p><strong>Absolutely.</strong> With 60+ LoRA styles including character-specific ones (Pokemon, Genshin Impact, Naruto, Helluva Boss, and more), AnimeCord is perfect for character art generation.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How do I generate NSFW images?</h3>
+        <p>Use <code>/generate</code> or <code>/generate-fast</code> in a Discord <strong>age-restricted (NSFW) channel</strong>. The bot will automatically enable NSFW generation in these channels.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Can I reimagine/restyle my own images?</h3>
+        <p><strong>Yes!</strong> Use the <code>/reimagine</code> command to upload any image and recreate it in a different AI art style using any of AnimeCord's 30+ models and 60+ LoRA styles.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Is AnimeCord safe to use on my server?</h3>
+        <p><strong>Yes.</strong> AnimeCord has built-in content safety systems, only allows NSFW in age-restricted channels, filters banned content with anti-evasion detection, and provides transparent privacy and content policies.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How fast is image generation?</h3>
+        <p>Standard generations typically complete in <strong>10-30 seconds</strong> depending on model complexity and queue length. Fast generations via <code>/generate-fast</code> are even quicker.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How do I get support?</h3>
+        <p>Join the <a href="https://discord.gg/C4ccrnkYF5">AnimeCord Support Server</a> on Discord for help, feature requests, and bug reports.</p>
+    </div>
+
+    <hr>
+
+    <div class="cta-section">
+        <h2>Join the AnimeCord Community</h2>
+        <p>AnimeCord is more than just a bot — it's a growing community of anime art enthusiasts, digital creators, and AI art explorers. Join 100+ servers already using AnimeCord to create stunning AI artwork every day.</p>
+        <p><strong>Ready to start generating?</strong></p>
+        <br>
+        <a href="https://www.animecord.com/">Visit Website</a>
+        <a href="https://discord.gg/C4ccrnkYF5">Join Support Server</a>
+    </div>
+
+    <hr>
+
+    <p><em>AnimeCord — Free AI anime image generation for Discord. Generate anime art, hentai, NSFW images, and realistic AI artwork with 30+ models and 60+ styles. No subscription required.</em></p>
+
+    <div class="tag-list">
+        <span class="tag">AnimeCord</span>
+        <span class="tag">AI anime generator</span>
+        <span class="tag">free Discord bot</span>
+        <span class="tag">NSFW Discord bot</span>
+        <span class="tag">hentai image generator</span>
+        <span class="tag">AI art bot</span>
+        <span class="tag">anime image generator</span>
+        <span class="tag">free AI image generation</span>
+        <span class="tag">Discord anime bot</span>
+        <span class="tag">text to image Discord</span>
+        <span class="tag">AI hentai generator</span>
+        <span class="tag">free NSFW bot</span>
+        <span class="tag">anime art generator</span>
+        <span class="tag">Stable Diffusion Discord</span>
+        <span class="tag">pony diffusion bot</span>
+        <span class="tag">LoRA styles Discord</span>
+        <span class="tag">AI art Discord bot 2026</span>
+        <span class="tag">best free anime bot</span>
+        <span class="tag">unlimited AI image generation</span>
+        <span class="tag">reimagine Discord bot</span>
+    </div>
 
 </body>
 </html>
